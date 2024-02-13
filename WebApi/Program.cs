@@ -44,7 +44,7 @@ builder.Services.AddSingleton<InterfaceSistemaFinanceiro, RepositorioSistemaFina
 builder.Services.AddSingleton<InterfaceUsuarioSistemaFinanceiro, RepositorioUsuarioSistemaFinanceiro>();
 
 
-// SERVIÇO DOMINIO
+// SERVIï¿½O DOMINIO
 builder.Services.AddSingleton<ICategoriaServico, CategoriaServico>();
 builder.Services.AddSingleton<IDespesaServico, DespesaServico>();
 builder.Services.AddSingleton<ISistemaFinanceiroServico, SistemaFinanceiroServico>();
@@ -88,12 +88,11 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
-//}
-
+}
 
 var devClient = "http://localhost:4200";
 
